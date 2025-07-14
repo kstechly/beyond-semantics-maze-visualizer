@@ -1,0 +1,81 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+/* Control panel for algorithm selection and Next button */
+#controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5em;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+#controls label,
+#controls select {
+  color: white;
+  font-size: 1em;
+}
+
+#controls button {
+  color: black;
+  font-size: 1em;
+}
+
+#controls select {
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 0.2em;
+}
+
+/* Top row container for controls */
+.ctrl-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Row-2 wrapper for algorithm slider (Coverage or Iterations) */
+/* Parameter container for sliders */
+.param-container {
+  display: none;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+}
+/* Single slider row: label, slider, value */
+.param-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+}
+.param-row label {
+  flex: 0 0 auto;
+}
+.param-row input[type=range] {
+  flex: 1 1 auto;
+}
+.param-row span {
+  width: 2em;
+  text-align: right;
+}
+
+/* Preview key text color */
+#genKeyPreview {
+  color: white;
+}

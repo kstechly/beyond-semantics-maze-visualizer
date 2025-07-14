@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Semantics Maze Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="controls">
+    <div class="ctrl-top">
+      <label for="mazeAlgoSelect">Maze:</label>
+      <select id="mazeAlgoSelect"></select>
+      <label for="solveAlgoSelect">Solve:</label>
+      <select id="solveAlgoSelect"></select>
+      <label for="solveDirSelect">Direction:</label>
+      <select id="solveDirSelect">
+        <option value="forward">Forward</option>
+        <option value="backward">Backward</option>
+      </select>
+      <button id="nextBtn">Next</button>
+    </div>
+    <!-- Drunkard's Walk coverage slider -->
+    <div id="dwSliderContainer" class="param-container">
+      <label for="dwSliderInput">Coverage:</label>
+      <input type="range" id="dwSliderInput" min="0" max="100" step="1" value="50">
+      <span id="dwSliderValue">50%</span>
+    </div>
+    <!-- Cellular Automata parameters -->
+    <div id="caControlsContainer" class="param-container">
+      <div class="param-row">
+        <label for="caIterationsInput">Iterations:</label>
+        <input type="range" id="caIterationsInput" min="1" max="12" step="1" value="3">
+        <span id="caIterationsValue">3</span>
+      </div>
+      <div class="param-row">
+        <label for="caFillInput">Fill %:</label>
+        <input type="range" id="caFillInput" min="0" max="100" step="1" value="45">
+        <span id="caFillValue">45%</span>
+      </div>
+      <div class="param-row">
+        <label for="caSurvivalInput">Survive ≥:</label>
+        <input type="range" id="caSurvivalInput" min="0" max="8" step="1" value="4">
+        <span id="caSurvivalValue">4</span>
+      </div>
+      <div class="param-row">
+        <label for="caBirthInput">Birth >:</label>
+        <input type="range" id="caBirthInput" min="0" max="8" step="1" value="5">
+        <span id="caBirthValue">5</span>
+      </div>
+    </div>
+  </div>
+  <canvas id="mazeCanvas"></canvas>
+  <!-- Load application logic -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>

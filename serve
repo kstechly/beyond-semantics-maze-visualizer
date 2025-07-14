@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+# serve: launch the local server + UI and open browser
+#
+# Manual steps:
+#   1) npm install
+#   2) npm run server       # starts Express server on port 3000
+#   3) open http://localhost:3000 in your browser
+#
+# Automated invocation below:
+
+npm install
+# If a port is provided, use it; otherwise unset to let server pick a random port
+if [ -n "$1" ]; then
+  export PORT="$1"
+  echo "Using provided port $PORT"
+else
+  unset PORT
+  echo "No port provided; server will pick a random free port"
+fi
+# Start the proxy server, logging output for port discovery
+npm run server > server.log 2>&1 &
+SERVER_PID=$!
+echo "Launched server (PID=$SERVER_PID), waiting for listening message..."
+# Wait until the server logs its listening URL
+while ! grep -q "Server listening on" server.log; do sleep 0.1; done
+# Extract the URL and open it in browser
+URL=$(grep -m1 "Server listening on" server.log | sed -E 's/.* on (http:\/\/[^ ]+).*/\1/')
+if command -v xdg-open > /dev/null; then
+  echo "Opening $URL in your browser..."
+  xdg-open "$URL"
+elif command -v open > /dev/null; then
+  echo "Opening $URL in your browser..."
+  open "$URL"
+else
+  echo "Please open $URL in your browser"
+fi
+echo "Server is running at: $URL"
+# Wait for server process to exit
+wait $SERVER_PID
