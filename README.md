@@ -2,6 +2,8 @@
 
 ![Animations of the 5 maze generation algorithms in this repo](demo.gif)
 
+([Click here to view maze visualizations interactively](https://kstechly.github.io/beyond-semantics-maze-visualizer/).)
+
 This repository contains files for generating and visualizing maze datasets from the paper "[Beyond Semantics: The Unreasonable Effectiveness of Reasonless Intermediate Tokens](https://arxiv.org/abs/2505.13775)".
 
 If you just want to visualize the mazes, you can use the `./serve` script to start a local server and open the visualization in your browser.
