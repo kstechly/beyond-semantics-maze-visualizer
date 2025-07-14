@@ -8,7 +8,7 @@ If you just want to visualize the mazes, you can use the `./serve` script to sta
 
 If you want to generate datasets that are bit-for-bit identical to the ones used in the paper, you can use the `headless_gen/cli.js` script. Details on usage are below.
 
-If you just want to generate datasets of the same kind, but which use a different PRNG and so don't exactly duplicate the ones used in the paper, please instead go to [this repository](https://github.com/kstechly/beyond-semantics-maze-gen-fast), a much faster Rust rewrite.
+If you just want to generate datasets of the same kind, but which use a different PRNG and so don't exactly duplicate the ones used in the paper, please instead go to [this repository](https://github.com/kstechly/beyond-semantics-faster-maze-generator), a much faster Rust rewrite.
 
 ## Visualization
 
